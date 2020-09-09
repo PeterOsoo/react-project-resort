@@ -100,6 +100,7 @@ h6 {
 }
 
 /* end of globals */
+
 /* Navbar */
 .navbar {
   position: fixed;
@@ -151,6 +152,8 @@ h6 {
   color: var(--primaryColor);
 }
 
+
+/* adds height  */
 .show-nav {
   height: 100px;
 }
