@@ -38,7 +38,7 @@ class RoomProvider extends Component {
 
 	render() {
 		return (
-			<RoomContext.Provider value={"hello js"}>
+			<RoomContext.Provider value={this.state}>
 				{this.props.children}
 			</RoomContext.Provider>
 		)
