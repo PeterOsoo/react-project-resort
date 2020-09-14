@@ -1,13 +1,19 @@
 import React, { Component } from "react"
 
 import { RoomContext } from "../context"
+import Loading from "./Loading"
 
 class FeaturedRooms extends Component {
 	static contextType = RoomContext
 	render() {
-		const value = this.context
-		console.log(value)
-		return <div>hello from featured rooms {value} </div>
+		const { featuredRooms: rooms } = this.context
+		console.log(rooms)
+		return (
+			<div>
+				hello from featured rooms
+				<Loading />{" "}
+			</div>
+		)
 	}
 }
 
