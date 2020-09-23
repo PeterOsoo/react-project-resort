@@ -47,15 +47,25 @@ class SingleRoom extends Component {
 			images,
 		} = room
 
+		const [main, ...defaultImages] = images
+		console.log(defaultImages)
+
 		return (
 			<React.Fragment>
-				<StyledHero img={images[0] || this.state.defaultBcg}>
+				<StyledHero img={main || this.state.defaultBcg}>
 					<Banner title={`${name} room`}>
 						<Link to="/rooms" className="btn-primary">
 							back to rooms
 						</Link>
 					</Banner>
 				</StyledHero>
+				<section className="single-room">
+					<div className="single-room-images">
+						{defaultImages.map((item, index) => (
+							<img key={index} src={item} alt={name} />
+						))}
+					</div>
+				</section>
 			</React.Fragment>
 		)
 	}
