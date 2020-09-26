@@ -69,7 +69,7 @@ class RoomProvider extends Component {
 		const target = event.target
 		const value = target.type === "checkbox" ? target.checked : target.value
 		const name = target.name
-		console.log(name, value)
+		// console.log(name, value)
 
 		this.setState(
 			{
@@ -90,6 +90,16 @@ class RoomProvider extends Component {
 			breakfast,
 			pets,
 		} = this.state
+		let tempRooms = [...rooms]
+
+		// filter by type
+		if (type !== "all") {
+			tempRooms = tempRooms.filter(room => room.type === type)
+		}
+
+		this.setState({
+			sortedRooms: tempRooms,
+		})
 	}
 
 	render() {
